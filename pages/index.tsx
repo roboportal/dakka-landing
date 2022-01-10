@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { css } from '@emotion/react';
 import { indigo, brown } from '@mui/material/colors';
 import Button from '@mui/material/Button';
+import { Footer } from '../components/Footer';
 
 export default function LandingPage() {
   return (
@@ -89,33 +90,7 @@ export default function LandingPage() {
         </div>
       </main>
 
-      <footer
-        css={css`
-          display: flex;
-          padding: 2rem 0;
-          border-top: 1px solid #eaeaea;
-          justify-content: center;
-          align-items: center;
-        `}
-      >
-        <span
-          css={css`
-            margin-right: 5px;
-          `}
-        >
-          Powered by
-        </span>
-        <a
-          href="https://github.com/roboportal"
-          target="_blank"
-          rel="noopener noreferrer"
-          css={css`
-            color: ${brown[100]};
-          `}
-        >
-          RoboPortal
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
