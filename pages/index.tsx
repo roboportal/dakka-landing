@@ -1,96 +1,75 @@
-import Head from 'next/head';
-import { css } from '@emotion/react';
-import { indigo, brown } from '@mui/material/colors';
-import Button from '@mui/material/Button';
-import { Footer } from '../components/Footer';
+import { css } from '@emotion/react'
+import { brown } from '@mui/material/colors'
+import Button from '@mui/material/Button'
 
 export default function LandingPage() {
   return (
-    <div
+    <main
       css={css`
-        padding: 0 2rem;
-        background: ${indigo[700]};
-        color: white;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        align-items: center;
+        flex-grow: 1;
       `}
     >
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Dakka - increase test coverage" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main
+      <h1
         css={css`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          flex-grow: 1;
+          margin: 0;
+          padding-top: 4rem;
+          font-size: 3.5rem;
+          text-align: center;
         `}
       >
-        <h1
-          css={css`
-            margin: 0;
-            padding-top: 4rem;
-            font-size: 3.5rem;
-            text-align: center;
-          `}
-        >
-          Increase test coverage
-        </h1>
+        Increase test coverage
+      </h1>
 
-        <p
+      <p
+        css={css`
+          margin: 1.5rem 0;
+          line-height: 1.5;
+          font-size: 1.5rem;
+          text-align: center;
+        `}
+      >
+        <span
           css={css`
-            margin: 1.5rem 0;
-            line-height: 1.5;
+            margin-right: 5px;
             font-size: 1.5rem;
-            text-align: center;
           `}
         >
-          <span
-            css={css`
-              margin-right: 5px;
-              font-size: 1.5rem;
-            `}
-          >
-            Get started by installing plugin
-          </span>
-          <a
-            css={css`
-              font-size: 1.8rem;
-              color: ${brown[100]};
-              border-bottom: 1px solid ${brown[100]};
-            `}
-            href=""
-          >
-            Dakka
-          </a>
-        </p>
-
-        <div
+          Get started by installing plugin
+        </span>
+        <a
           css={css`
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 1.8rem;
+            color: ${brown[100]};
+            border-bottom: 1px solid ${brown[100]};
           `}
+          href=""
         >
-          <Button
-            css={css`
-              color: white;
-              border-color: white;
-            `}
-            variant="outlined"
-            size="large"
-            onClick={() => {}}
-          >
-            Install Dakka
-          </Button>
-        </div>
-      </main>
+          Dakka
+        </a>
+      </p>
 
-      <Footer />
-    </div>
-  );
+      <div
+        css={css`
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        `}
+      >
+        <Button
+          css={css`
+            color: white;
+            border-color: white;
+          `}
+          variant="outlined"
+          size="large"
+          onClick={() => {}}
+        >
+          Install Dakka
+        </Button>
+      </div>
+    </main>
+  )
 }
