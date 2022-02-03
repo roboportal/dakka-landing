@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import { brown } from '@mui/material/colors';
+import { css } from '@emotion/react'
+import { brown } from '@mui/material/colors'
 
 export function Footer() {
   return (
@@ -30,5 +30,5 @@ export function Footer() {
         RoboPortal
       </a>
     </footer>
-  );
+  )
 }
