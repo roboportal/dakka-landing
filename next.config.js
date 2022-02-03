@@ -1,7 +1,13 @@
-module.exports = {
+const config = {
   reactStrictMode: true,
-  images: {
+  trailingSlash: true,
+}
+
+if (process.env.NODE_ENV === 'production') {
+  config.images = {
     loader: 'akamai',
     path: '',
-  },
+  }
 }
+
+module.exports = config
