@@ -1,8 +1,13 @@
-module.exports = {
+const config = {
   reactStrictMode: true,
-  images: {
-    loader: 'akamai',
-    path: '',
-  },
   trailingSlash: true,
 }
+
+if (process.env.NODE_ENV === 'production') {
+  config.images = {
+    loader: 'akamai',
+    path: '',
+  }
+}
+
+module.exports = config
