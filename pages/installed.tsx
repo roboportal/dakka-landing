@@ -110,8 +110,15 @@ export default function Installed() {
                 variant="outlined"
                 value={inputValue}
                 onChange={handleInputChange}
+                inputProps={{
+                  'data-automation-id': 'input',
+                }}
               />
-              <Button variant="outlined" onClick={handleButtonClick}>
+              <Button
+                variant="outlined"
+                data-automation-id="button"
+                onClick={handleButtonClick}
+              >
                 Click Button
               </Button>
             </div>
@@ -161,6 +168,7 @@ export default function Installed() {
 
             {elementText && (
               <div
+                data-automation-id="element"
                 css={css`
                   border: 1px solid #999;
                   border-radius: 4px;
