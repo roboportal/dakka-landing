@@ -4,4 +4,5 @@ module.exports = {
     loader: 'akamai',
     path: '',
   },
+  trailingSlash: true,
 }
