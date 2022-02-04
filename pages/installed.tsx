@@ -36,25 +36,27 @@ export default function Installed() {
       <h1
         css={css`
           color: #fff;
-          margin-bottom: 60px;
+          margin-bottom: 8vh;
         `}
       >
         Let&apos;s get you onboarded in 7 simple steps.
       </h1>
       <div
         css={css`
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: 400px 400px 560px 560px 200px 400px 400px;
-          grid-row-gap: 40px;
-          grid-column-gap: 4vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+
+          & > div {
+            margin-bottom: 8vh;
+          }
         `}
       >
         <div
           css={css`
-            grid-column-start: 1;
-            grid-column-end: 3;
-            grid-row-start: 1;
+            align-self: flex-start;
+            width: 64vw;
           `}
         >
           <StepCard step="1">
@@ -62,14 +64,13 @@ export default function Installed() {
               Open development tools, click <strong>Dakka</strong> tab and
               enable recording for this tab.
             </h3>
-            <Image alt="step one" src={stepOne} width={1000} height={356} />
+            <Image alt="step one" src={stepOne} width={1000} height={366} />
           </StepCard>
         </div>
         <div
           css={css`
-            grid-column-start: 2;
-            grid-column-end: 4;
-            grid-row-start: 2;
+            align-self: flex-end;
+            width: 64vw;
           `}
         >
           <StepCard step="2">
@@ -77,15 +78,14 @@ export default function Installed() {
               Click <strong>Record</strong> button to start creating your first
               test.
             </h3>
-            <Image alt="step one" src={stepTwo} width={1000} height={356} />
+            <Image alt="step one" src={stepTwo} width={1000} height={366} />
           </StepCard>
         </div>
 
         <div
           css={css`
-            grid-column-start: 1;
-            grid-column-end: 3;
-            grid-row-start: 3;
+            align-self: flex-start;
+            width: 64vw;
           `}
         >
           <StepCard step="3">
@@ -98,13 +98,13 @@ export default function Installed() {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin-top: 32px;
-                margin-bottom: 16px;
+                margin-top: 4vh;
+                margin-bottom: 4vh;
               `}
             >
               <TextField
                 css={css`
-                  margin-bottom: 32px;
+                  margin-bottom: 4vh;
                 `}
                 label="Enter Some Text Here"
                 variant="outlined"
@@ -122,26 +122,24 @@ export default function Installed() {
                 Click Button
               </Button>
             </div>
-            <Image alt="step three" src={stepThree} width={1000} height={356} />
+            <Image alt="step three" src={stepThree} width={1000} height={366} />
           </StepCard>
         </div>
         <div
           css={css`
-            grid-column-start: 2;
-            grid-column-end: 4;
-            grid-row-start: 4;
+            align-self: flex-end;
+            width: 68vw;
           `}
         >
           <StepCard step="4">
             <h3>Use toolbar to drag and drop assertion block.</h3>
-            <Image alt="step four" src={stepFour} width={1000} height={546} />
+            <Image alt="step four" src={stepFour} width={1000} height={508} />
           </StepCard>
         </div>
         <div
           css={css`
-            grid-column-start: 1;
-            grid-column-end: 3;
-            grid-row-start: 5;
+            align-self: flex-start;
+            width: 68vw;
           `}
         >
           <StepCard step="5">
@@ -174,7 +172,8 @@ export default function Installed() {
                   border-radius: 4px;
                   margin-right: auto;
                   margin-left: auto;
-                  padding: 8px;
+                  padding: 2vh 1vw;
+                  margin-top: 3vh;
                 `}
               >
                 {elementText}
@@ -184,9 +183,7 @@ export default function Installed() {
         </div>
         <div
           css={css`
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 6;
+            width: 32vw;
           `}
         >
           <StepCard step="6">
@@ -196,14 +193,12 @@ export default function Installed() {
         </div>
         <div
           css={css`
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 7;
+            width: 16vw;
           `}
         >
           <StepCard step="7">
             <h3>Export the test.</h3>
-            <Image alt="step six" src={stepSeven} width={200} height={256} />
+            <Image alt="step six" src={stepSeven} />
           </StepCard>
         </div>
       </div>

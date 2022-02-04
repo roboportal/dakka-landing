@@ -9,16 +9,17 @@ export default function StepCard({ children, step }: StepCardProps) {
   return (
     <div
       css={css`
-        min-height: 100px;
-        min-width: 100px;
         position: relative;
         background-color: white;
         border: 1px solid black;
         border-radius: 4px;
-        padding: 16px;
+        padding: 2vh 1vw;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
           rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
           rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
       `}
     >
       <div
