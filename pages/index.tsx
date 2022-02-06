@@ -1,17 +1,15 @@
+import React from 'react'
 import { css } from '@emotion/react'
 import { brown } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 
-export default function LandingPage() {
+import { getDocumentsIds } from '../lib/api'
+import { Header } from '../components/Header'
+
+export default function LandingPage({ id }) {
   return (
-    <main
-      css={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-      `}
-    >
+    <>
+      <Header id={id} />
       <h1
         css={css`
           margin: 0;
@@ -70,6 +68,14 @@ export default function LandingPage() {
           Install Dakka
         </Button>
       </div>
-    </main>
+    </>
   )
+}
+
+export async function getStaticProps() {
+  const [id] = await getDocumentsIds()
+
+  return {
+    props: { id },
+  }
 }

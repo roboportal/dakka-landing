@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import { Footer } from '../components/Footer'
 import { indigo } from '@mui/material/colors'
 import { css } from '@emotion/react'
 
+import { Footer } from '../components/Footer'
+
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, id, pageProps }) {
   return (
     <div
       css={css`
@@ -22,10 +23,17 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Dakka - increase test coverage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <main
+        css={css`
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 5vh 2vw;
+        `}
+      >
+        <Component {...pageProps} />
+      </main>
       <Footer />
     </div>
   )
 }
-
-export default MyApp
