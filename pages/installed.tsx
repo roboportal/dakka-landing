@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { css } from '@emotion/react'
 import Image from 'next/image'
@@ -15,8 +16,10 @@ import stepFiveA from '../public/5_a.png'
 import stepFiveB from '../public/5_b.png'
 import stepSix from '../public/6.png'
 import stepSeven from '../public/7.png'
+import { Header } from '../components/Header'
+import { getDocumentsIds } from '../lib/api'
 
-export default function Installed() {
+export default function Installed({ id }) {
   const [inputValue, setInputValue] = useState('')
   const [elementText, setElementText] = useState('')
 
@@ -24,15 +27,8 @@ export default function Installed() {
   const handleButtonClick = () => setElementText(inputValue)
 
   return (
-    <main
-      css={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 5vh 2vw;
-        color: black;
-      `}
-    >
+    <>
+      <Header id={id} />
       <h1
         css={css`
           color: #fff;
@@ -200,6 +196,14 @@ export default function Installed() {
           <Image alt="step six" src={stepSeven} />
         </StepCard>
       </div>
-    </main>
+    </>
   )
+}
+
+export async function getStaticProps() {
+  const [id] = await getDocumentsIds()
+
+  return {
+    props: { id },
+  }
 }

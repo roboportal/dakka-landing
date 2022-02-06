@@ -10,6 +10,7 @@ export function Footer() {
         border-top: 1px solid #eaeaea;
         justify-content: center;
         align-items: center;
+        width: 100%;
       `}
     >
       <span
