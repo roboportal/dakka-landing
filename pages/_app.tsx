@@ -10,7 +10,6 @@ export default function MyApp({ Component, id, pageProps }) {
   return (
     <div
       css={css`
-        padding: 0 2rem;
         background: ${indigo[700]};
         color: white;
         display: flex;
@@ -23,16 +22,7 @@ export default function MyApp({ Component, id, pageProps }) {
         <meta name="description" content="Dakka - increase test coverage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
-        css={css`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 5vh 2vw;
-        `}
-      >
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
       <Footer />
     </div>
   )

@@ -44,7 +44,6 @@ export default function StepCard({
             display: flex;
             justify-content: center;
             align-items: center;
-            color: black;
             font-weight: 600;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
               rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
@@ -53,13 +52,14 @@ export default function StepCard({
         >
           {step}
         </div>
-        <h3
+        <h2
           css={css`
             text-align: center;
+            color: black;
           `}
         >
           {header}
-        </h3>
+        </h2>
         {children}
       </div>
     </div>

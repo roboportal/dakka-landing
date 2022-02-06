@@ -47,12 +47,27 @@ export default function Documentation({
             display: flex;
             flex-direction: column;
             border-right: 1px solid;
+            border-color: #eaeaea;
             padding: 16px;
           `}
         >
-          {navigation.map(({ id, title }) => (
+          {navigation.map(({ id, title, isMatch }) => (
             <Link key={id} href={`/doc/${id}`} passHref>
-              <MLink>{title}</MLink>
+              <MLink
+                css={css`
+                  margin-bottom: 8px;
+                  color: white;
+                  font-size: 1em;
+                  font-weight: 600;
+                  text-decoration: ${isMatch ? 'underline' : 'none'};
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                `}
+              >
+                {title}
+              </MLink>
             </Link>
           ))}
         </nav>
@@ -71,9 +86,14 @@ export default function Documentation({
 
 export async function getStaticProps({ params: { id } }) {
   const page = await getDocument(id)
-  const navigation = await getDocumentsNavigation()
+  const navigationData = await getDocumentsNavigation()
   const title = page?.data?.docPage?.title
   const content = page?.data?.docPage?.content?.json
+
+  const navigation = navigationData.map((n) => {
+    const isMatch = n.id === id
+    return { ...n, isMatch }
+  })
 
   return {
     props: { title, content, id, navigation },

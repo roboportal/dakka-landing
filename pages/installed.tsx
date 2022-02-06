@@ -27,7 +27,14 @@ export default function Installed({ id }) {
   const handleButtonClick = () => setElementText(inputValue)
 
   return (
-    <>
+    <main
+      css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 2vw;
+      `}
+    >
       <Header id={id} />
       <h1
         css={css`
@@ -196,7 +203,7 @@ export default function Installed({ id }) {
           <Image alt="step six" src={stepSeven} />
         </StepCard>
       </div>
-    </>
+    </main>
   )
 }
 

@@ -11,6 +11,7 @@ export function Footer() {
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin-top: 5vh;
       `}
     >
       <span
