@@ -61,10 +61,10 @@ export default function Documentation({
                   color: white;
                   font-size: 1em;
                   font-weight: 600;
-                  text-decoration: ${isMatch ? 'underline' : 'none'};
+                  text-decoration: ${isMatch ? 'none' : 'underline'};
 
                   &:hover {
-                    text-decoration: underline;
+                    text-decoration: none;
                   }
                 `}
               >
@@ -75,7 +75,9 @@ export default function Documentation({
         </nav>
         <div
           css={css`
-            padding: 0 16px 16px 16px;
+            padding: 0 2vw;
+            word-break: break-word;
+            width: 100%;
           `}
         >
           <h1>{title}</h1>

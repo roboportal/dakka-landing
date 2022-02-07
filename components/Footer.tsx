@@ -26,7 +26,11 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
         css={css`
-          color: ${brown[100]};
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
         `}
       >
         RoboPortal

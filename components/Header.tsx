@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
-import MLink from '@mui/material/Link'
 
 import { css } from '@emotion/react'
 
@@ -59,11 +58,11 @@ export function Header({ id }) {
                 color: white;
                 font-size: 1.2em;
                 font-weight: 600;
-                text-decoration: ${isMatch ? 'underline' : 'none'};
+                text-decoration: ${isMatch ? 'none' : 'underline'};
                 padding-bottom: 6px;
                 cursor: pointer;
                 &:hover {
-                  text-decoration: underline;
+                  text-decoration: none;
                 }
               `}
             >
