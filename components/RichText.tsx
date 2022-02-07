@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
 
+import { loader } from '../lib/imageLoader'
+
 const getRenderOption = (links) => {
   return {
     renderNode: {
@@ -16,6 +18,7 @@ const getRenderOption = (links) => {
               alt={item.title}
               height={item.height}
               width={item.width}
+              loader={loader}
             />
           )
         }
