@@ -180,6 +180,7 @@ export default function Installed({ id }) {
                   margin-left: auto;
                   padding: 2vh 1vw;
                   margin-top: 3vh;
+                  color: black;
                 `}
               >
                 {elementText}

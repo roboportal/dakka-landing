@@ -54,7 +54,7 @@ export default function Documentation({
           `}
         >
           {navigation.map(({ id, title, isMatch }) => (
-            <Link key={id} href={`/doc/${id}`} passHref>
+            <Link key={id} href={`/documentation/${id}`} passHref>
               <MLink
                 css={css`
                   margin-bottom: 8px;
@@ -108,7 +108,7 @@ export async function getStaticProps({ params: { id } }) {
 export async function getStaticPaths() {
   const data = await getDocumentsIds()
 
-  const paths = data.map((id) => `/doc/${id}`)
+  const paths = data.map((id) => `/documentation/${id}`)
 
   return {
     paths,

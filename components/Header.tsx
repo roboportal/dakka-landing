@@ -14,8 +14,8 @@ export function Header({ id }) {
     const [, firstLevelInPath] = asPath.split('/')
 
     return [
-      { title: 'Documentation', link: `/doc/${id}` },
-      { title: 'Getting started', link: '/installed' },
+      { title: 'Documentation', link: `/documentation/${id}` },
+      { title: 'Getting started', link: '/getting_started' },
     ].map((it) => {
       const [, firstLevelInLink] = it.link.split('/')
       const isMatch = firstLevelInLink === firstLevelInPath

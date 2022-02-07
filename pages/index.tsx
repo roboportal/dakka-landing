@@ -1,6 +1,5 @@
 import React from 'react'
 import { css } from '@emotion/react'
-import { brown } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 
 import { getDocumentsIds } from '../lib/api'
@@ -39,9 +38,12 @@ export default function LandingPage({ id }) {
         </span>
         <a
           css={css`
-            font-size: 1.8rem;
-            color: ${brown[100]};
-            border-bottom: 1px solid ${brown[100]};
+            font-weight: 600;
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
           `}
           href=""
         >
