@@ -18,6 +18,7 @@ export default function MyApp({ Component, id, pageProps }) {
       `}
     >
       <Head>
+        <html lang="en" />
         <title>Dakka</title>
         <meta name="description" content="Dakka - increase test coverage" />
         <link rel="icon" href="/favicon.ico" />
