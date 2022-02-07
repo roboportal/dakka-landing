@@ -9,7 +9,7 @@ const config = {
 if (process.env.NODE_ENV === 'production') {
   config.images = {
     loader: 'akamai',
-    path: 'https://www.dakka.dev',
+    path: '',
     domains: ['images.ctfassets.net'],
   }
 }
