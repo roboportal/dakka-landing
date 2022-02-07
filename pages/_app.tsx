@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer'
 
 import '../styles/globals.css'
 
-export default function MyApp({ Component, id, pageProps }) {
+export default function App({ Component, id, pageProps }) {
   return (
     <div
       css={css`
@@ -18,7 +18,6 @@ export default function MyApp({ Component, id, pageProps }) {
       `}
     >
       <Head>
-        <html lang="en" />
         <title>Dakka</title>
         <meta name="description" content="Dakka - increase test coverage" />
         <link rel="icon" href="/favicon.ico" />

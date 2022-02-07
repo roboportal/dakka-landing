@@ -19,6 +19,7 @@ const getRenderOption = (links) => {
               height={item.height}
               width={item.width}
               loader={loader}
+              unoptimized
             />
           )
         }

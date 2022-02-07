@@ -36,22 +36,24 @@ export function Header({ id }) {
         padding: 16px;
       `}
     >
-      <Link href="/" passHref>
-        <Image
-          alt="dakka logo"
-          src={inlineDakkaLogo}
-          width={108}
-          height={29}
-          css={css`
-            cursor: pointer;
-          `}
-        />
+      <Link href="/">
+        <a>
+          <Image
+            alt="dakka logo"
+            src={inlineDakkaLogo}
+            width={108}
+            height={29}
+            css={css`
+              cursor: pointer;
+            `}
+          />
+        </a>
       </Link>
 
       {links.map(({ title, link, isMatch }, index) => {
         return (
-          <Link key={title} href={link} passHref>
-            <MLink
+          <Link key={title} href={link}>
+            <a
               css={css`
                 margin-left: ${index ? '16px' : '32px'};
                 color: white;
@@ -59,13 +61,14 @@ export function Header({ id }) {
                 font-weight: 600;
                 text-decoration: ${isMatch ? 'underline' : 'none'};
                 padding-bottom: 6px;
+                cursor: pointer;
                 &:hover {
                   text-decoration: underline;
                 }
               `}
             >
               {title}
-            </MLink>
+            </a>
           </Link>
         )
       })}
