@@ -19,6 +19,7 @@ interface LandingProps {
   id: string
   content: any
   navigation: any[]
+  links: any[]
 }
 
 export default function Documentation({
@@ -26,6 +27,7 @@ export default function Documentation({
   content,
   id,
   navigation,
+  links,
 }: LandingProps) {
   if (!title || !content) {
     return <ErrorPage statusCode={404} />
@@ -77,7 +79,7 @@ export default function Documentation({
           `}
         >
           <h1>{title}</h1>
-          <RichText content={content} />
+          <RichText content={content} links={links} />
         </div>
       </div>
     </>
@@ -89,6 +91,7 @@ export async function getStaticProps({ params: { id } }) {
   const navigationData = await getDocumentsNavigation()
   const title = page?.data?.docPage?.title
   const content = page?.data?.docPage?.content?.json
+  const links = page?.data?.docPage?.content?.links?.assets?.block
 
   const navigation = navigationData.map((n) => {
     const isMatch = n.id === id
@@ -96,7 +99,7 @@ export async function getStaticProps({ params: { id } }) {
   })
 
   return {
-    props: { title, content, id, navigation },
+    props: { title, content, id, navigation, links },
   }
 }
 

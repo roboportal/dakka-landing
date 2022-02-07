@@ -19,6 +19,21 @@ export const getDocument = (id: string) => {
       title
       content {
         json
+        links {
+          assets { 
+            block {
+              sys {
+                id
+              }
+              url
+              title
+              width
+              height
+              description
+              contentType
+            }
+          }
+        }
       }
     }
   }`

@@ -20,10 +20,11 @@ export function Header({ id }) {
     ].map((it) => {
       const [, firstLevelInLink] = it.link.split('/')
       const isMatch = firstLevelInLink === firstLevelInPath
-      console.log(firstLevelInLink, firstLevelInPath)
+
       return { ...it, isMatch }
     })
   }, [id, asPath])
+
   return (
     <nav
       css={css`
@@ -40,7 +41,7 @@ export function Header({ id }) {
           alt="dakka logo"
           src={inlineDakkaLogo}
           width={108}
-          height={34}
+          height={29}
           css={css`
             cursor: pointer;
           `}
