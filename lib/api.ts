@@ -51,6 +51,7 @@ export async function getDocumentsNavigation(id: string) {
           id
         }
         title
+        level
       }
     }
   }`
@@ -59,16 +60,21 @@ export async function getDocumentsNavigation(id: string) {
 
   const result = await fetch(options.endpoint, options).then((r) => r.json())
 
-  const data: Array<{ id: string; title: string }> =
-    result.data.docPageCollection.items.map(({ sys: { id }, title }) => ({
-      id,
-      title,
-    }))
+  const data: Array<{ id: string; title: string; level: string }> =
+    result.data.docPageCollection.items.map(
+      ({ sys: { id }, title, level }) => ({
+        id,
+        title,
+        level,
+      }),
+    )
 
-  return data.map((n) => {
-    const isMatch = n.id === id
-    return { ...n, isMatch }
-  })
+  return data
+    .map((n) => {
+      const isMatch = n.id === id
+      return { ...n, isMatch }
+    })
+    .sort((a, b) => (a.level !== b.level ? (a.level < b.level ? -1 : 1) : 0))
 }
 
 export async function getDocumentsIds() {

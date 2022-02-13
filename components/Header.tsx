@@ -6,7 +6,7 @@ import { Search } from '../components/Search'
 
 import { css } from '@emotion/react'
 
-import inlineDakkaLogo from '../public/dakka-logo-inline.png'
+import inlineDakkaLogo from '../public/dakka_1.svg'
 
 export function Header({ id, handleSearch }) {
   const { asPath } = useRouter()
@@ -15,8 +15,8 @@ export function Header({ id, handleSearch }) {
     const [, firstLevelInPath] = asPath.split('/')
 
     return [
-      { title: 'Documentation', link: `/documentation/${id}` },
       { title: 'Getting started', link: '/getting_started' },
+      { title: 'Documentation', link: `/documentation/${id}` },
     ].map((it) => {
       const [, firstLevelInLink] = it.link.split('/')
       const isMatch = firstLevelInLink === firstLevelInPath
@@ -30,10 +30,12 @@ export function Header({ id, handleSearch }) {
       css={css`
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
         align-items: center;
         width: 100%;
-        padding: 16px;
+        padding: 24px 32px 16px;
+        background: white;
+        border-bottom: 1px solid #eaeaea;
+        justify-content: space-between;
       `}
     >
       <Link href="/">
@@ -41,38 +43,43 @@ export function Header({ id, handleSearch }) {
           <Image
             alt="dakka logo"
             src={inlineDakkaLogo}
-            width={108}
-            height={29}
+            width={92}
+            height={34}
             css={css`
               cursor: pointer;
+              color: #4a4a4a;
             `}
           />
         </a>
       </Link>
 
-      <Search handleSearch={handleSearch} />
-      {links.map(({ title, link, isMatch }, index) => {
-        return (
-          <Link key={title} href={link}>
-            <a
-              css={css`
-                margin-left: ${index ? '16px' : '32px'};
-                color: white;
-                font-size: 1.2em;
-                font-weight: 600;
-                text-decoration: ${isMatch ? 'none' : 'underline'};
-                padding-bottom: 6px;
-                cursor: pointer;
-                &:hover {
+      <div>
+        <Search handleSearch={handleSearch} />
+
+        {links.map(({ title, link, isMatch }, index) => {
+          return (
+            <Link key={title} href={link}>
+              <a
+                css={css`
+                  margin-left: ${index ? '16px' : '32px'};
+                  color: black;
+                  font-size: 1em;
                   text-decoration: none;
-                }
-              `}
-            >
-              {title}
-            </a>
-          </Link>
-        )
-      })}
+                  color: #4a4a4a;
+                  padding-bottom: 6px;
+                  cursor: pointer;
+
+                  &:hover {
+                    text-decoration: none;
+                  }
+                `}
+              >
+                {title}
+              </a>
+            </Link>
+          )
+        })}
+      </div>
     </nav>
   )
 }
