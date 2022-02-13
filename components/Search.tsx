@@ -21,10 +21,15 @@ export const Search = ({ handleSearch }) => {
     }
   }
 
-  const searchResults = useMemo(
-    () => handleSearch(`${searchPhrase}*`),
-    [handleSearch, searchPhrase],
-  )
+  const searchResults = useMemo(() => {
+    const searchTerm = searchPhrase
+      .split(' ')
+      .filter((it) => !!it)
+      .map((it) => it + '*')
+      .join(' ')
+
+    return handleSearch(searchTerm)
+  }, [handleSearch, searchPhrase])
 
   const handleMouseEnter = () => (isMouseOverRef.current = true)
   const handleMouseLeave = () => (isMouseOverRef.current = false)
