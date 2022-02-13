@@ -86,6 +86,7 @@ export default function Documentation({
             width: 100%;
             color: #dadde1;
             line-height: 28px;
+            max-width: 999px;
           `}
         >
           <h1
