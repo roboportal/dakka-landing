@@ -1,10 +1,13 @@
 import SearchIcon from '@mui/icons-material/Search'
-import TextField from '@mui/material/TextField'
 import Box from '@mui/material/Box'
 import { useState, useRef, useMemo } from 'react'
 import Popper from '@mui/material/Popper'
 import { css } from '@emotion/react'
 import Link from 'next/link'
+import Paper from '@mui/material/Paper'
+import InputBase from '@mui/material/InputBase'
+import Divider from '@mui/material/Divider'
+import IconButton from '@mui/material/IconButton'
 
 export const Search = ({ handleSearch }) => {
   const [searchPhrase, setSearchPhrase] = useState('')
@@ -48,18 +51,44 @@ export const Search = ({ handleSearch }) => {
         align-items: flex-start;
       `}
     >
-      <SearchIcon />
-      <TextField
+      <Paper
         ref={anchorElementRef}
-        value={searchPhrase}
-        onChange={handleChange}
-        variant="standard"
-        inputProps={{
-          onFocus: handleFocus,
-          onBlur: handleBlur,
+        component="form"
+        sx={{
+          boxShadow: 'none',
+          border: '1px solid #eaeaea',
+          p: '0px 8px',
+          display: 'flex',
+          alignItems: 'center',
+          width: 280,
         }}
-      />
-      <Popper open={isPopperOpen} anchorEl={anchorElementRef.current}>
+      >
+        <InputBase
+          value={searchPhrase}
+          onChange={handleChange}
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Search"
+          inputProps={{
+            onFocus: handleFocus,
+            onBlur: handleBlur,
+          }}
+        />
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        <IconButton sx={{ p: '10px' }} aria-label="search">
+          <SearchIcon />
+        </IconButton>
+      </Paper>
+
+      <Popper
+        css={css`
+          margin-top: 20px;
+          border: 1px solid #eaeaea;
+          border-radius: 4px;
+          width: 280px;
+        `}
+        open={isPopperOpen}
+        anchorEl={anchorElementRef.current}
+      >
         <Box
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -78,7 +107,7 @@ export const Search = ({ handleSearch }) => {
                   margin-bottom: 8px;
                   text-decoration: none;
                   cursor: pointer;
-
+                  color: #4a4a4a;
                   &:hover {
                     text-decoration: underline;
                   }
