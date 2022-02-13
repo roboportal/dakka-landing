@@ -63,6 +63,12 @@ export const Search = ({ handleSearch }) => {
           width: 280,
         }}
       >
+        <SearchIcon
+          css={css`
+            color: #787878;
+          `}
+        />
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         <InputBase
           value={searchPhrase}
           onChange={handleChange}
@@ -73,10 +79,6 @@ export const Search = ({ handleSearch }) => {
             onBlur: handleBlur,
           }}
         />
-        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        <IconButton sx={{ p: '10px' }} aria-label="search">
-          <SearchIcon />
-        </IconButton>
       </Paper>
 
       <Popper
@@ -110,6 +112,7 @@ export const Search = ({ handleSearch }) => {
                   color: #4a4a4a;
                   &:hover {
                     text-decoration: underline;
+                    color: #046e7a;
                   }
                 `}
               >

@@ -77,6 +77,7 @@ export function Header({ id, handleSearch }) {
 
                   &:hover {
                     text-decoration: none;
+                    color: #046e7a;
                   }
                 `}
               >
