@@ -85,9 +85,17 @@ export default function Documentation({
             word-break: break-word;
             width: 100%;
             color: #dadde1;
+            line-height: 28px;
           `}
         >
-          <h1>{title}</h1>
+          <h1
+            css={css`
+              font-size: 3rem;
+              margin-bottom: 3rem;
+            `}
+          >
+            {title}
+          </h1>
           <RichText content={content} links={links} />
         </div>
       </div>
