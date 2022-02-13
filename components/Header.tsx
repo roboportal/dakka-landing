@@ -2,12 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
+import { Search } from '../components/Search'
 
 import { css } from '@emotion/react'
 
 import inlineDakkaLogo from '../public/dakka-logo-inline.png'
 
-export function Header({ id }) {
+export function Header({ id, handleSearch }) {
   const { asPath } = useRouter()
 
   const links = useMemo(() => {
@@ -49,6 +50,7 @@ export function Header({ id }) {
         </a>
       </Link>
 
+      <Search handleSearch={handleSearch} />
       {links.map(({ title, link, isMatch }, index) => {
         return (
           <Link key={title} href={link}>

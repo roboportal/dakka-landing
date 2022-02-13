@@ -17,18 +17,25 @@ import stepFiveB from '../public/5_b.png'
 import stepSix from '../public/6.png'
 import stepSeven from '../public/7.png'
 import { Header } from '../components/Header'
-import { getDocumentsIds } from '../lib/api'
+import {
+  getDocumentsIds,
+  getDocumentsNavigation,
+  getDocumentsSearchIndex,
+} from '../lib/api'
+import { useSearch } from '../lib/useSearch'
 
-export default function Installed({ id }) {
+export default function Installed({ id, searchIndex, navigation }) {
   const [inputValue, setInputValue] = useState('')
   const [elementText, setElementText] = useState('')
+
+  const { doSearch } = useSearch(searchIndex, navigation)
 
   const handleInputChange = (e) => setInputValue(e.target.value)
   const handleButtonClick = () => setElementText(inputValue)
 
   return (
     <>
-      <Header id={id} />
+      <Header id={id} handleSearch={doSearch} />
       <main
         css={css`
           display: flex;
@@ -217,8 +224,10 @@ export default function Installed({ id }) {
 
 export async function getStaticProps() {
   const [id] = await getDocumentsIds()
+  const navigation = await getDocumentsNavigation(id)
+  const searchIndex = await getDocumentsSearchIndex()
 
   return {
-    props: { id },
+    props: { id, navigation, searchIndex },
   }
 }

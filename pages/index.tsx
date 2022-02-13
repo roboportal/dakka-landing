@@ -2,13 +2,15 @@ import React from 'react'
 import { css } from '@emotion/react'
 import Button from '@mui/material/Button'
 
-import { getDocumentsIds } from '../lib/api'
+import { getDocumentsIds, getDocumentsSearchIndex } from '../lib/api'
 import { Header } from '../components/Header'
+import { useSearch } from '../lib/useSearch'
 
-export default function LandingPage({ id }) {
+export default function LandingPage({ id, searchIndex, navigation }) {
+  const { doSearch } = useSearch(searchIndex, navigation)
   return (
     <>
-      <Header id={id} />
+      <Header id={id} handleSearch={doSearch} />
       <h1
         css={css`
           margin: 0;
@@ -76,8 +78,9 @@ export default function LandingPage({ id }) {
 
 export async function getStaticProps() {
   const [id] = await getDocumentsIds()
+  const searchIndex = await getDocumentsSearchIndex()
 
   return {
-    props: { id },
+    props: { id, searchIndex },
   }
 }
