@@ -87,11 +87,20 @@ export default function Documentation({
             color: #dadde1;
             line-height: 28px;
             max-width: 999px;
+
+            > h2 {
+              margin-top: 3rem;
+            }
+
+            a {
+              color: #0c97a8;
+            }
           `}
         >
           <h1
             css={css`
               font-size: 3rem;
+              margin-top: 3rem;
               margin-bottom: 3rem;
             `}
           >
