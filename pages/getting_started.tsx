@@ -29,188 +29,207 @@ export default function Installed({ id }) {
   return (
     <>
       <Header id={id} />
-      <main
+      <div
         css={css`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 0 5vw;
+          width: 100%;
+          background: #242526;
         `}
       >
-        <h1
-          css={css`
-            color: #fff;
-            margin-bottom: 8vh;
-            text-align: center;
-          `}
-        >
-          Let&apos;s get you onboarded in 7 simple steps.
-        </h1>
-        <div
+        <main
           css={css`
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-
-            & > div {
-              margin-bottom: 8vh;
-            }
+            margin: 0 5vw;
           `}
         >
-          <StepCard
-            step="1"
-            header="Open development tools, click Dakka tab and
+          <h1
+            css={css`
+              text-align: start;
+              color: white;
+              margin-top: 2.5rem;
+              margin-bottom: 8vh;
+              width: 100%;
+            `}
+          >
+            Let&apos;s get you onboarded in 7 simple steps.
+          </h1>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+
+              & > div {
+                margin-bottom: 8vh;
+              }
+            `}
+          >
+            <StepCard
+              step="1"
+              header="Open development tools, click Dakka tab and
               enable recording for this tab."
-            wrapperStyles={css`
-              align-self: flex-start;
-              min-width: 300px;
-              width: 64vw;
-            `}
-          >
-            <h3
-              css={css`
-                text-align: center;
-              `}
-            ></h3>
-            <Image alt="step one" src={stepOne} width={1000} height={366} />
-          </StepCard>
-
-          <StepCard
-            step="2"
-            header="Click Record button to start creating your first
-              test."
-            wrapperStyles={css`
-              align-self: flex-end;
-              min-width: 300px;
-              width: 64vw;
-            `}
-          >
-            <Image alt="step one" src={stepTwo} width={1000} height={366} />
-          </StepCard>
-
-          <StepCard
-            step="3"
-            header="Fill the input below with some text and click the button. You can
-              stop recording now."
-            wrapperStyles={css`
-              align-self: flex-start;
-              min-width: 300px;
-              width: 64vw;
-            `}
-          >
-            <div
-              css={css`
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 4vh;
-                margin-bottom: 4vh;
+              wrapperStyles={css`
+                align-self: flex-start;
+                min-width: 300px;
+                width: 64vw;
               `}
             >
-              <TextField
+              <h3
                 css={css`
+                  text-align: center;
+                `}
+              ></h3>
+              <Image alt="step one" src={stepOne} width={1000} height={366} />
+            </StepCard>
+
+            <StepCard
+              step="2"
+              header="Click Record button to start creating your first
+              test."
+              wrapperStyles={css`
+                align-self: flex-end;
+                min-width: 300px;
+                width: 64vw;
+              `}
+            >
+              <Image alt="step one" src={stepTwo} width={1000} height={366} />
+            </StepCard>
+
+            <StepCard
+              step="3"
+              header="Fill the input below with some text and click the button. You can
+              stop recording now."
+              wrapperStyles={css`
+                align-self: flex-start;
+                min-width: 300px;
+                width: 64vw;
+              `}
+            >
+              <div
+                css={css`
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin-top: 4vh;
                   margin-bottom: 4vh;
                 `}
-                label="Enter Some Text Here"
-                variant="outlined"
-                value={inputValue}
-                onChange={handleInputChange}
-                inputProps={{
-                  'data-automation-id': 'input',
-                }}
-              />
-              <Button
-                variant="outlined"
-                data-automation-id="button"
-                onClick={handleButtonClick}
               >
-                Click Button
-              </Button>
-            </div>
-            <Image alt="step three" src={stepThree} width={1000} height={366} />
-          </StepCard>
+                <TextField
+                  css={css`
+                    margin-bottom: 4vh;
+                  `}
+                  label="Enter Some Text Here"
+                  variant="outlined"
+                  value={inputValue}
+                  onChange={handleInputChange}
+                  inputProps={{
+                    'data-automation-id': 'input',
+                  }}
+                />
+                <Button
+                  variant="outlined"
+                  data-automation-id="button"
+                  onClick={handleButtonClick}
+                >
+                  Click Button
+                </Button>
+              </div>
+              <Image
+                alt="step three"
+                src={stepThree}
+                width={1000}
+                height={366}
+              />
+            </StepCard>
 
-          <StepCard
-            step="4"
-            header="Use toolbar to drag and drop assertion block."
-            wrapperStyles={css`
-              align-self: flex-end;
-              min-width: 300px;
-              width: 68vw;
-            `}
-          >
-            <Image alt="step four" src={stepFour} width={1000} height={508} />
-          </StepCard>
-
-          <StepCard
-            step="5"
-            header="Locate assertion source by using element locating tool on the box
-              below."
-            wrapperStyles={css`
-              align-self: flex-start;
-              min-width: 300px;
-              width: 68vw;
-            `}
-          >
-            <div
-              css={css`
-                display: flex;
-                flex-direction: row;
-                align-items: center;
+            <StepCard
+              step="4"
+              header="Use toolbar to drag and drop assertion block."
+              wrapperStyles={css`
+                align-self: flex-end;
+                min-width: 300px;
+                width: 68vw;
               `}
             >
-              <Image alt="step five a" src={stepFiveA} width={32} height={32} />
-              <ArrowForwardIcon />
-              <Image
-                alt="step five b"
-                src={stepFiveB}
-                width={395}
-                height={50}
-              />
-            </div>
+              <Image alt="step four" src={stepFour} width={1000} height={508} />
+            </StepCard>
 
-            {elementText && (
+            <StepCard
+              step="5"
+              header="Locate assertion source by using element locating tool on the box
+              below."
+              wrapperStyles={css`
+                align-self: flex-start;
+                min-width: 300px;
+                width: 68vw;
+              `}
+            >
               <div
-                data-automation-id="element"
                 css={css`
-                  border: 1px solid #999;
-                  border-radius: 4px;
-                  margin-right: auto;
-                  margin-left: auto;
-                  padding: 2vh 1vw;
-                  margin-top: 3vh;
-                  color: black;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
                 `}
               >
-                {elementText}
+                <Image
+                  alt="step five a"
+                  src={stepFiveA}
+                  width={32}
+                  height={32}
+                />
+                <ArrowForwardIcon />
+                <Image
+                  alt="step five b"
+                  src={stepFiveB}
+                  width={395}
+                  height={50}
+                />
               </div>
-            )}
-          </StepCard>
 
-          <StepCard
-            step="6"
-            header="Set assertion block params."
-            wrapperStyles={css`
-              width: 32vw;
-              min-width: 300px;
-            `}
-          >
-            <Image alt="step six" src={stepSix} width={500} height={398} />
-          </StepCard>
+              {elementText && (
+                <div
+                  data-automation-id="element"
+                  css={css`
+                    border: 1px solid #999;
+                    border-radius: 4px;
+                    margin-right: auto;
+                    margin-left: auto;
+                    padding: 2vh 1vw;
+                    margin-top: 3vh;
+                    color: black;
+                  `}
+                >
+                  {elementText}
+                </div>
+              )}
+            </StepCard>
 
-          <StepCard
-            step="7"
-            header="Export the test."
-            wrapperStyles={css`
-              width: 16vw;
-              min-width: 250px;
-            `}
-          >
-            <Image alt="step six" src={stepSeven} />
-          </StepCard>
-        </div>
-      </main>
+            <StepCard
+              step="6"
+              header="Set assertion block params."
+              wrapperStyles={css`
+                width: 32vw;
+                min-width: 300px;
+              `}
+            >
+              <Image alt="step six" src={stepSix} width={500} height={398} />
+            </StepCard>
+
+            <StepCard
+              step="7"
+              header="Export the test."
+              wrapperStyles={css`
+                width: 16vw;
+                min-width: 250px;
+              `}
+            >
+              <Image alt="step six" src={stepSeven} />
+            </StepCard>
+          </div>
+        </main>
+      </div>
     </>
   )
 }
