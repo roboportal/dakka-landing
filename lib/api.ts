@@ -43,7 +43,7 @@ export const getDocument = (id: string) => {
   return fetch(options.endpoint, options).then((r) => r.json())
 }
 
-export async function getDocumentsNavigation() {
+export async function getDocumentsNavigation(id: string) {
   const query = `{
     docPageCollection {
       items {
@@ -70,6 +70,11 @@ export async function getDocumentsNavigation() {
     )
 
   return data
+    .map((n) => {
+      const isMatch = n.id === id
+      return { ...n, isMatch }
+    })
+    .sort((a, b) => (a.level !== b.level ? (a.level < b.level ? -1 : 1) : 0))
 }
 
 export async function getDocumentsIds() {
@@ -89,6 +94,61 @@ export async function getDocumentsIds() {
 
   const data: string[] = result.data.docPageCollection.items.map(
     ({ sys: { id } }) => id,
+  )
+
+  return data
+}
+
+export async function getDocumentsSearchIndex() {
+  const query = `{
+    docPageCollection {
+      items {
+        sys {
+          id
+        }
+        title
+        content {
+          json
+        }
+      }
+    }
+  }`
+
+  const options = getOptions(query)
+
+  const result = await fetch(options.endpoint, options).then((r) => r.json())
+
+  const getTextContext = (data) => {
+    let text = ''
+
+    const getTextContextAuxiliary = (it) => {
+      if (Array.isArray(it)) {
+        it.forEach(getTextContextAuxiliary)
+      } else {
+        if (it.nodeType === 'text') {
+          text += `${it.value} `
+        }
+        Object.values(it).forEach((value) => {
+          if (value instanceof Object) {
+            getTextContextAuxiliary(value)
+          }
+        })
+      }
+    }
+
+    getTextContextAuxiliary(data)
+
+    return text
+  }
+
+  const data: string[] = result.data.docPageCollection.items.map(
+    ({ sys: { id }, title, content }) => {
+      return {
+        id,
+        title,
+        content: getTextContext(content),
+      }
+    },
   )
 
   return data

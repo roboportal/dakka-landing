@@ -5,13 +5,14 @@ import Link from 'next/link'
 import MLink from '@mui/material/Link'
 
 import { Header } from '../../components/Header'
-
 import RichText from '../../components/RichText'
+import { useSearch } from '../../lib/useSearch'
 
 import {
   getDocument,
   getDocumentsIds,
   getDocumentsNavigation,
+  getDocumentsSearchIndex,
 } from '../../lib/api'
 
 interface LandingProps {
@@ -20,6 +21,7 @@ interface LandingProps {
   content: any
   navigation: any[]
   links: any[]
+  searchIndex: any
 }
 
 export default function Documentation({
@@ -28,14 +30,17 @@ export default function Documentation({
   id,
   navigation,
   links,
+  searchIndex,
 }: LandingProps) {
+  const { doSearch } = useSearch(searchIndex, navigation)
+
   if (!title || !content) {
     return <ErrorPage statusCode={404} />
   }
 
   return (
     <>
-      <Header id={id} />
+      <Header id={id} handleSearch={doSearch} />
       <div
         css={css`
           display: flex;
@@ -106,20 +111,15 @@ export default function Documentation({
 
 export async function getStaticProps({ params: { id } }) {
   const page = await getDocument(id)
-  const navigationData = await getDocumentsNavigation()
+  const navigation = await getDocumentsNavigation(id)
+  const searchIndex = await getDocumentsSearchIndex()
+
   const title = page?.data?.docPage?.title
   const content = page?.data?.docPage?.content?.json
   const links = page?.data?.docPage?.content?.links?.assets?.block
 
-  const navigation = navigationData
-    .map((n) => {
-      const isMatch = n.id === id
-      return { ...n, isMatch }
-    })
-    .sort((a, b) => (a.level !== b.level ? (a.level < b.level ? -1 : 1) : 0))
-
   return {
-    props: { title, content, id, navigation, links },
+    props: { title, content, id, navigation, links, searchIndex },
   }
 }
 

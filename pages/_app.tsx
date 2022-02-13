@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer'
 
 import '../styles/globals.css'
 
-export default function App({ Component, id, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
     <div
       css={css`
