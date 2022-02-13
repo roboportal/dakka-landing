@@ -10,8 +10,8 @@ export default function App({ Component, id, pageProps }) {
   return (
     <div
       css={css`
-        background: ${indigo[700]};
-        color: white;
+        background: white;
+        color: #000;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
