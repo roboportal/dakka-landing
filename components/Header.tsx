@@ -53,7 +53,13 @@ export function Header({ id, handleSearch }) {
         </a>
       </Link>
 
-      <div>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        `}
+      >
         <Search handleSearch={handleSearch} />
 
         {links.map(({ title, link, isMatch }, index) => {
