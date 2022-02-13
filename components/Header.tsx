@@ -62,7 +62,7 @@ export function Header({ id }) {
                   color: black;
                   font-size: 1em;
                   text-decoration: none;
-                  color: #4a4a4a;
+                  color: ${isMatch ? '#0c97a8' : '#4a4a4a'};
                   padding-bottom: 6px;
                   cursor: pointer;
 
