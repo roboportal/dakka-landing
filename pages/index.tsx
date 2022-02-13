@@ -2,7 +2,11 @@ import React from 'react'
 import { css } from '@emotion/react'
 import Button from '@mui/material/Button'
 
-import { getDocumentsIds, getDocumentsSearchIndex } from '../lib/api'
+import {
+  getDocumentsIds,
+  getDocumentsNavigation,
+  getDocumentsSearchIndex,
+} from '../lib/api'
 import { Header } from '../components/Header'
 import { useSearch } from '../lib/useSearch'
 import Image from 'next/image'
@@ -166,8 +170,9 @@ export default function LandingPage({ id, searchIndex, navigation }) {
 export async function getStaticProps() {
   const [id] = await getDocumentsIds()
   const searchIndex = await getDocumentsSearchIndex()
+  const navigation = await getDocumentsNavigation(id)
 
   return {
-    props: { id, searchIndex },
+    props: { id, searchIndex, navigation },
   }
 }
