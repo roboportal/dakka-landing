@@ -49,19 +49,27 @@ export const Search = ({ handleSearch }) => {
       css={css`
         display: flex;
         align-items: flex-start;
+
+        @media (max-width: 678px) {
+          width: 100%;
+        }
       `}
     >
       <Paper
         ref={anchorElementRef}
         component="form"
-        sx={{
-          boxShadow: 'none',
-          border: '1px solid #eaeaea',
-          p: '0px 8px',
-          display: 'flex',
-          alignItems: 'center',
-          width: 280,
-        }}
+        css={css`
+          box-shadow: none;
+          border: 1px solid #eaeaea;
+          padding: 0px 8px;
+          display: flex;
+          align-items: center;
+          width: 280px;
+
+          @media (max-width: 678px) {
+            width: 100%;
+          }
+        `}
       >
         <SearchIcon
           css={css`
