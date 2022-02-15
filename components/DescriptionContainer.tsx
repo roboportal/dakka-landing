@@ -1,7 +1,9 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import Box from '@mui/material/Box'
-
+import BarChart from '@mui/icons-material/BarChart'
+import LocationSearching from '@mui/icons-material/LocationSearching'
+import FileDownload from '@mui/icons-material/FileDownload'
 import Image from 'next/image'
 import screen from '../public/screen3.png'
 
@@ -9,7 +11,7 @@ export function DescriptionContainer() {
   return (
     <div
       css={css`
-        margin-top: 4rem;
+        margin-top: 8rem;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -19,7 +21,7 @@ export function DescriptionContainer() {
         padding: 4rem 12rem;
         color: rgb(68, 68, 68);
 
-        @media (max-width: 678px) {
+        @media (max-width: 1200px) {
           padding: 2rem 1rem;
         }
       `}
@@ -33,7 +35,7 @@ export function DescriptionContainer() {
           font-size: 1rem;
           > div {
             text-align: center;
-            width: 20rem;
+            width: 25rem;
           }
 
           @media (max-width: 678px) {
@@ -41,13 +43,57 @@ export function DescriptionContainer() {
 
             > div {
               margin-bottom: 1rem;
+              text-align: start;
+              justify-content: start;
             }
           }
         `}
       >
-        <Box>Generate tests with user actions</Box>
-        <Box>Add Assertion Blocks and choose the best element selector</Box>
-        <Box>Export to Playwright, Cypress, Puppeteer</Box>
+        <Box
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          `}
+        >
+          <BarChart
+            css={css`
+              color: #0c97a8;
+              margin-right: 0.5rem;
+            `}
+          />
+          <span>Generate tests with user actions</span>
+        </Box>
+        <Box
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          `}
+        >
+          <LocationSearching
+            css={css`
+              color: #0c97a8;
+              margin-right: 0.5rem;
+            `}
+          />
+          <span>Add assertions and choose the element selector</span>
+        </Box>
+        <Box
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          `}
+        >
+          <FileDownload
+            css={css`
+              color: #0c97a8;
+              margin-right: 0.5rem;
+            `}
+          />
+          <span>Export to Playwright, Cypress, Puppeteer</span>
+        </Box>
       </div>
       <Box
         css={css`
