@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
-import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
 
 import Image from 'next/image'
 import screen from '../public/screen3.png'
@@ -31,6 +31,10 @@ export function DescriptionContainer() {
           justify-content: space-between;
           width: 100%;
           font-size: 1rem;
+          > div {
+            text-align: center;
+            width: 20rem;
+          }
 
           @media (max-width: 678px) {
             flex-direction: column;
@@ -41,32 +45,11 @@ export function DescriptionContainer() {
           }
         `}
       >
-        <div
-          css={css`
-            width: 20rem;
-            text-align: center;
-          `}
-        >
-          Generate tests with user actions
-        </div>
-        <div
-          css={css`
-            width: 20rem;
-            text-align: center;
-          `}
-        >
-          Add Assertion Blocks and choose the best element selector
-        </div>
-        <div
-          css={css`
-            width: 20rem;
-            text-align: center;
-          `}
-        >
-          Export to Playwright, Cypress, Puppeteer
-        </div>
+        <Box>Generate tests with user actions</Box>
+        <Box>Add Assertion Blocks and choose the best element selector</Box>
+        <Box>Export to Playwright, Cypress, Puppeteer</Box>
       </div>
-      <div
+      <Box
         css={css`
           display: flex;
           align-items: center;
@@ -84,7 +67,7 @@ export function DescriptionContainer() {
             color: #4a4a4a;
           `}
         />
-      </div>
+      </Box>
     </div>
   )
 }
