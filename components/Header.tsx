@@ -36,10 +36,20 @@ export function Header({ id, handleSearch }) {
         background: white;
         border-bottom: 1px solid #eaeaea;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media (max-width: 678px) {
+          align-items: start;
+          padding: 24px 16px 16px;
+        }
       `}
     >
       <Link href="/">
-        <a>
+        <a
+          css={css`
+            flex: 1;
+          `}
+        >
           <Image
             alt="dakka logo"
             src={inlineDakkaLogo}
@@ -58,10 +68,16 @@ export function Header({ id, handleSearch }) {
           display: flex;
           flex-direction: row;
           align-items: center;
+          margin-right: 20px;
+
+          @media (max-width: 678px) {
+            align-items: end;
+            flex-direction: column-reverse;
+            margin-right: 0px;
+            margin-bottom: 16px;
+          }
         `}
       >
-        <Search handleSearch={handleSearch} />
-
         {links.map(({ title, link, isMatch }, index) => {
           return (
             <Link key={title} href={link}>
@@ -70,14 +86,17 @@ export function Header({ id, handleSearch }) {
                   margin-left: ${index ? '16px' : '32px'};
                   color: black;
                   font-size: 1em;
-                  text-decoration: none;
+                  text-decoration: ${isMatch ? 'underline' : 'none'};
                   color: ${isMatch ? '#0c97a8' : '#4a4a4a'};
                   padding-bottom: 6px;
                   cursor: pointer;
 
                   &:hover {
-                    text-decoration: none;
                     color: #046e7a;
+                  }
+
+                  @media (max-width: 678px) {
+                    text-decoration: underline;
                   }
                 `}
               >
@@ -87,6 +106,7 @@ export function Header({ id, handleSearch }) {
           )
         })}
       </div>
+      <Search handleSearch={handleSearch} />
     </nav>
   )
 }
