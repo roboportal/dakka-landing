@@ -1,47 +1,60 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import Box from '@mui/material/Box'
-import Image from 'next/image'
-import screen from '../public/screen3.png'
 import CheckOutlined from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
 import Button from '@mui/material/Button'
+import { ImageCarousel } from '../components/ImageCarousel'
 
 export function DescriptionContainer() {
   return (
     <Box
       css={css`
-        margin-top: 4rem;
+        margin-top: 2rem;
         display: flex;
         align-items: center;
         flex-direction: row;
         justify-content: center;
         background: rgb(245, 246, 247);
         width: 100%;
-        padding: 2rem 12rem;
+        padding: 4rem 8rem;
 
-        @media (max-width: 1200px) {
-          flex-direction: column;
+        @media (max-width: 1500px) {
           padding: 2rem 2rem;
+        }
+
+        @media (max-width: 1024px) {
+          flex-direction: column;
+          padding: 2rem 4rem;
+        }
+
+        @media (max-width: 678px) {
+          flex-direction: column;
+          padding: 2rem 1.5rem;
         }
       `}
     >
       <div
         css={css`
           flex: 2;
-          margin-right: 4rem;
+          margin-right: 6rem;
 
-          @media (max-width: 600px) {
+          @media (max-width: 900px) {
             margin-right: 0;
           }
         `}
       >
         <h2
           css={css`
+            margin-top: 0;
             line-height: 2.5rem;
             color: #000;
             font-size: 2rem;
             font-weight: 600;
+
+            @media (max-width: 600px) {
+              text-align: center;
+            }
           `}
         >
           Gerenate tests for Cypress, Plawright and Puppeteer End-to-End tests
@@ -68,6 +81,8 @@ export function DescriptionContainer() {
               css={css`
                 color: ${green[600]};
                 margin-right: 0.5rem;
+                width: 1.2rem;
+                height: 1.2rem;
               `}
             />
             <span>
@@ -83,6 +98,8 @@ export function DescriptionContainer() {
               css={css`
                 color: ${green[600]};
                 margin-right: 0.5rem;
+                width: 1.2rem;
+                height: 1.2rem;
               `}
             />
             <span>
@@ -98,6 +115,8 @@ export function DescriptionContainer() {
               css={css`
                 color: ${green[600]};
                 margin-right: 0.5rem;
+                width: 1.2rem;
+                height: 1.2rem;
               `}
             />
             <span>
@@ -136,20 +155,14 @@ export function DescriptionContainer() {
       <div
         css={css`
           flex: 2;
+          width: 100%;
 
           @media (max-width: 1200px) {
             margin-top: 2rem;
           }
         `}
       >
-        <Image
-          alt="dakka logo"
-          src={screen}
-          css={css`
-            cursor: pointer;
-            color: #4a4a4a;
-          `}
-        />
+        <ImageCarousel />
       </div>
     </Box>
   )
