@@ -47,7 +47,7 @@ export default function Documentation({
           flex-direction: row;
           justify-content: flex-start;
           width: 100%;
-          background-color: #1c1e21;
+          background-color: white;
         `}
       >
         <nav
@@ -56,7 +56,7 @@ export default function Documentation({
             flex-direction: column;
             border-right: 1px solid;
             border-color: #606770;
-            padding: 16px;
+            padding: 2rem;
             width: 300px;
           `}
         >
@@ -65,16 +65,15 @@ export default function Documentation({
               <MLink
                 css={css`
                   margin-bottom: 8px;
-                  color: #dadde1;
-                  color: ${isMatch ? '#0c97a8' : '#dadde1'};
+                  color: ${isMatch ? '#0c97a8' : '#2e3138'};
                   padding: 8px;
-                  font-size: 1em;
+                  font-size: 1.125rem;
                   font-weight: 400;
                   text-decoration: none;
 
                   &:hover {
                     text-decoration: none;
-                    background-color: hsla(0, 0%, 100%, 0.05);
+                    background-color: hsla(0, 100%, 1%, 0.09);
                     border-radius: 4px;
                   }
                 `}
@@ -89,9 +88,9 @@ export default function Documentation({
             padding: 0 2vw;
             word-break: break-word;
             width: 100%;
-            color: #dadde1;
             line-height: 28px;
             max-width: 999px;
+            color: #2e3138;
 
             > h2 {
               margin-top: 3rem;
@@ -105,7 +104,7 @@ export default function Documentation({
           <h1
             css={css`
               font-size: 3rem;
-              margin-top: 3rem;
+              margin-top: 5rem;
               margin-bottom: 3rem;
             `}
           >

@@ -30,6 +30,10 @@ export function DescriptionContainer() {
         css={css`
           flex: 2;
           margin-right: 4rem;
+
+          @media (max-width: 600px) {
+            margin-right: 0;
+          }
         `}
       >
         <h2
