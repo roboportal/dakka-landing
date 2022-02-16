@@ -18,7 +18,7 @@ export default function LandingPage({ id, searchIndex, navigation }) {
       <Header id={id} handleSearch={doSearch} />
       <div
         css={css`
-          padding: 1rem;
+          padding: 2rem;
         `}
       >
         <h1
@@ -54,25 +54,11 @@ export default function LandingPage({ id, searchIndex, navigation }) {
             css={css`
               margin-right: 5px;
               font-size: 1rem;
-              color: #4a4a4a;
+              color: #191919;
             `}
           >
             Get started by installing plugin
           </span>
-          <a
-            css={css`
-              font-size: 1rem;
-              font-weight: 600;
-              text-decoration: none;
-              color: #0c97a8;
-              &:hover {
-                text-decoration: underline;
-              }
-            `}
-            href=""
-          >
-            Dakka
-          </a>
         </p>
 
         <div
@@ -87,6 +73,7 @@ export default function LandingPage({ id, searchIndex, navigation }) {
               color: white;
               border-color: #0c97a8;
               color: #0c97a8;
+              border-radius: 2px;
 
               &:hover {
                 color: #0c97a8;

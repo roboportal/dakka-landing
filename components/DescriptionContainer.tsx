@@ -1,108 +1,128 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import Box from '@mui/material/Box'
-import BarChart from '@mui/icons-material/BarChart'
-import LocationSearching from '@mui/icons-material/LocationSearching'
-import FileDownload from '@mui/icons-material/FileDownload'
 import Image from 'next/image'
 import screen from '../public/screen3.png'
+import CheckOutlined from '@mui/icons-material/CheckCircle'
+import { green } from '@mui/material/colors'
+import Button from '@mui/material/Button'
 
 export function DescriptionContainer() {
   return (
-    <div
+    <Box
       css={css`
-        margin-top: 8rem;
+        margin-top: 4rem;
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
-        width: 100%;
         background: rgb(245, 246, 247);
+        width: 100%;
         padding: 4rem 12rem;
-        color: rgb(68, 68, 68);
 
         @media (max-width: 1200px) {
-          padding: 2rem 1rem;
+          flex-direction: column;
+          padding: 2rem 2rem;
         }
       `}
     >
       <div
         css={css`
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          font-size: 1rem;
-          > div {
-            text-align: center;
-            width: 25rem;
-          }
-
-          @media (max-width: 678px) {
-            flex-direction: column;
-
-            > div {
-              margin-bottom: 1rem;
-              text-align: start;
-              justify-content: start;
-            }
-          }
+          flex: 2;
+          margin-right: 4rem;
         `}
       >
-        <Box
+        <h2
           css={css`
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            line-height: 2rem;
+            color: #000;
           `}
         >
-          <BarChart
-            css={css`
-              color: #0c97a8;
-              margin-right: 0.5rem;
-            `}
-          />
-          <span>Generate tests with user actions</span>
-        </Box>
-        <Box
+          Gerenate tests for Cypress, Plawright and Puppeteer End-to-End tests
+        </h2>
+        <div
           css={css`
+            letter-spacing: 0.025em;
+            color: #191919;
+            line-height: 1.5rem;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            > div {
+              margin-bottom: 1rem;
+            }
           `}
         >
-          <LocationSearching
+          <div
             css={css`
-              color: #0c97a8;
-              margin-right: 0.5rem;
+              display: flex;
             `}
-          />
-          <span>Add assertions and choose the element selector</span>
-        </Box>
-        <Box
-          css={css`
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          `}
-        >
-          <FileDownload
+          >
+            <CheckOutlined
+              css={css`
+                color: ${green[600]};
+                margin-right: 0.5rem;
+              `}
+            />
+            <span>
+              Visual representation of user actions happening on the page.
+            </span>
+          </div>
+          <div
             css={css`
-              color: #0c97a8;
-              margin-right: 0.5rem;
+              display: flex;
             `}
-          />
-          <span>Export to Playwright, Cypress, Puppeteer</span>
-        </Box>
+          >
+            <CheckOutlined
+              css={css`
+                color: ${green[600]};
+                margin-right: 0.5rem;
+              `}
+            />
+            <span>
+              Choose element selector from the list of best suggested selectors.
+            </span>
+          </div>
+          <div
+            css={css`
+              display: flex;
+            `}
+          >
+            <CheckOutlined
+              css={css`
+                color: ${green[600]};
+                margin-right: 0.5rem;
+              `}
+            />
+            <span>
+              Add assertion blocks to any testing phase, locate elements for
+              assertion and add assertion logic. - Export or copy to clipboard
+              generated tests.
+            </span>
+          </div>
+          <Button
+            disableElevation
+            css={css`
+              border-radius: 0;
+              margin-top: 1rem;
+              margin-left: 2rem;
+              align-self: start;
+              background: #191919;
+              border-radius: 2px;
+
+              &:hover {
+                background: #0c97a8;
+              }
+            `}
+            variant="contained"
+            onClick={() => {}}
+          >
+            Get Started
+          </Button>
+        </div>
       </div>
-      <Box
+      <div
         css={css`
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          width: 100%;
-          margin-top: 2rem;
+          flex: 2;
         `}
       >
         <Image
@@ -113,7 +133,7 @@ export function DescriptionContainer() {
             color: #4a4a4a;
           `}
         />
-      </Box>
-    </div>
+      </div>
+    </Box>
   )
 }

@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import { brown } from '@mui/material/colors'
 
 export function Footer() {
   return (
@@ -13,6 +12,7 @@ export function Footer() {
         width: 100%;
         background: rgba(250, 250, 250);
         margin-top: auto;
+        color: #969faf;
       `}
     >
       <span
