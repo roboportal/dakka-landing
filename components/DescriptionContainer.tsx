@@ -18,7 +18,7 @@ export function DescriptionContainer() {
         justify-content: center;
         background: rgb(245, 246, 247);
         width: 100%;
-        padding: 4rem 12rem;
+        padding: 2rem 12rem;
 
         @media (max-width: 1200px) {
           flex-direction: column;
@@ -34,8 +34,9 @@ export function DescriptionContainer() {
       >
         <h2
           css={css`
-            line-height: 2rem;
+            line-height: 2.5rem;
             color: #000;
+            font-size: 2rem;
           `}
         >
           Gerenate tests for Cypress, Plawright and Puppeteer End-to-End tests
@@ -47,6 +48,7 @@ export function DescriptionContainer() {
             line-height: 1.5rem;
             display: flex;
             flex-direction: column;
+
             > div {
               margin-bottom: 1rem;
             }
@@ -104,13 +106,19 @@ export function DescriptionContainer() {
             css={css`
               border-radius: 0;
               margin-top: 1rem;
-              margin-left: 2rem;
               align-self: start;
               background: #191919;
               border-radius: 2px;
 
               &:hover {
                 background: #0c97a8;
+              }
+
+              @media (max-width: 600px) {
+                width: 80%;
+                margin-top: 2rem;
+                align-self: center;
+                margin-bottom: 2rem;
               }
             `}
             variant="contained"
@@ -123,6 +131,10 @@ export function DescriptionContainer() {
       <div
         css={css`
           flex: 2;
+
+          @media (max-width: 1200px) {
+            margin-top: 2rem;
+          }
         `}
       >
         <Image
