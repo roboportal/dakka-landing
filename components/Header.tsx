@@ -3,10 +3,9 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { Search } from '../components/Search'
-
 import { css } from '@emotion/react'
-
-import inlineDakkaLogo from '../public/dakka_1.svg'
+import inlineDakkaLogo from '../public/dakka_olol.svg'
+import gitHubIcon from '../public/github.png'
 
 export function Header({ id, handleSearch }) {
   const { asPath } = useRouter()
@@ -78,16 +77,21 @@ export function Header({ id, handleSearch }) {
           }
         `}
       >
+        <Link href="https://github.com/roboportal/dakka">
+          <a>
+            <Image alt="github logo" src={gitHubIcon} width={24} height={24} />
+          </a>
+        </Link>
+
         {links.map(({ title, link, isMatch }, index) => {
           return (
             <Link key={title} href={link}>
               <a
                 css={css`
                   margin-left: ${index ? '16px' : '32px'};
-                  color: black;
                   font-size: 1em;
                   text-decoration: ${isMatch ? 'underline' : 'none'};
-                  color: ${isMatch ? '#0c97a8' : '#4a4a4a'};
+                  color: ${isMatch ? '#0c97a8' : '#191919'};
                   padding-bottom: 6px;
                   cursor: pointer;
 

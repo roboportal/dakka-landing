@@ -139,6 +139,9 @@ export default function Installed({ id, searchIndex, navigation }) {
                   variant="outlined"
                   data-automation-id="button"
                   onClick={handleButtonClick}
+                  css={css`
+                    border-radius: 2px;
+                  `}
                 >
                   Click Button
                 </Button>

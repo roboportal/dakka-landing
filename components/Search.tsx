@@ -64,6 +64,7 @@ export const Search = ({ handleSearch }) => {
           display: flex;
           align-items: center;
           width: 280px;
+          border-radius: 2px;
 
           @media (max-width: 678px) {
             width: 100%;
