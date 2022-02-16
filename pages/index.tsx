@@ -42,30 +42,12 @@ export default function LandingPage({ id, searchIndex, navigation }) {
         >
           Open source test generation tool
         </h2>
-        <p
-          css={css`
-            margin: 1rem 0;
-            line-height: 1.5;
-            font-size: 1.5rem;
-            text-align: center;
-          `}
-        >
-          <span
-            css={css`
-              margin-right: 5px;
-              font-size: 1rem;
-              color: #191919;
-            `}
-          >
-            Get started by installing plugin
-          </span>
-        </p>
-
         <div
           css={css`
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 2rem;
           `}
         >
           <Button
