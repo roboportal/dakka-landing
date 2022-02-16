@@ -37,6 +37,7 @@ export function DescriptionContainer() {
             line-height: 2.5rem;
             color: #000;
             font-size: 2rem;
+            font-weight: 600;
           `}
         >
           Gerenate tests for Cypress, Plawright and Puppeteer End-to-End tests
