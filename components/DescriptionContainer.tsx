@@ -55,9 +55,14 @@ export function DescriptionContainer() {
             @media (max-width: 600px) {
               text-align: center;
             }
+
+            span {
+              color: #00796b;
+            }
           `}
         >
-          Gerenate tests for Cypress, Plawright and Puppeteer End-to-End tests
+          Gerenate tests for <span>Cypress</span>, <span>Plawright</span> and
+          <span> Puppeteer</span>
         </h2>
         <div
           css={css`
