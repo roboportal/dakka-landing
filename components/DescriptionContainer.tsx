@@ -125,10 +125,24 @@ export function DescriptionContainer() {
               `}
             />
             <span>
-              Add assertion blocks to any testing phase, locate elements for
-              assertion and add assertion logic. - Export or copy to clipboard
-              generated tests.
+              Add assertion blocks, locate elements for assertion and add
+              assertion logic.
             </span>
+          </div>
+          <div
+            css={css`
+              display: flex;
+            `}
+          >
+            <CheckOutlined
+              css={css`
+                color: ${green[600]};
+                margin-right: 0.5rem;
+                width: 1.2rem;
+                height: 1.2rem;
+              `}
+            />
+            <span>Export or copy to clipboard generated tests.</span>
           </div>
           <Button
             disableElevation
