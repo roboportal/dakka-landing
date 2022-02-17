@@ -16,8 +16,8 @@ const getRenderOption = (links) => {
             <Image
               src={item.url}
               alt={item.title}
-              height={item.height}
-              width={item.width}
+              height={item.height / 2}
+              width={item.width / 2}
               loader={loader}
               unoptimized
             />
