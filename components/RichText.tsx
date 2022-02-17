@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
-
+import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { css } from '@emotion/react'
 import { loader } from '../lib/imageLoader'
 
 const getRenderOption = (links) => {
@@ -26,6 +26,13 @@ const getRenderOption = (links) => {
 
         return null
       },
+    },
+    renderMark: {
+      [MARKS.CODE]: (code) => (
+        <pre>
+          <code>{code}</code>
+        </pre>
+      ),
     },
   }
 }
