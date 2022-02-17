@@ -85,12 +85,13 @@ export default function Documentation({
         </nav>
         <div
           css={css`
-            padding: 0 2vw;
+            padding: 0 4vw;
             word-break: break-word;
             width: 100%;
             line-height: 28px;
             max-width: 999px;
             color: #2e3138;
+            margin-bottom: 8rem;
 
             > h2 {
               margin-top: 3rem;
@@ -98,6 +99,18 @@ export default function Documentation({
 
             a {
               color: #0c97a8;
+            }
+
+            > hr {
+              border: none;
+              margin: 0;
+              border-top: 1px solid #eee;
+            }
+
+            p {
+              font-size: 1.125rem;
+              line-height: 1.75rem;
+              margin-bottom: 1.25rem;
             }
           `}
         >
