@@ -74,6 +74,7 @@ export function DescriptionContainer() {
 
             > div {
               margin-bottom: 1rem;
+              align-items: center;
             }
           `}
         >
