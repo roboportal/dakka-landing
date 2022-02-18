@@ -40,7 +40,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
         flex-wrap: wrap;
 
         @media (max-width: 768px) {
-          align-items: start;
+          align-items: flex-start;
           padding: 16px;
         }
       `}
@@ -62,12 +62,12 @@ export function Header({ id, handleSearch, onOpenNav }) {
       <Link href="/">
         <a
           css={css`
-            flex: 1;
+            flex: 1 auto;
 
             @media (max-width: 768px) {
               display: flex;
               flex-direction: column;
-              align-items: end;
+              align-items: flex-end;
               padding: 8px;
             }
           `}
@@ -93,7 +93,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
           margin-right: 20px;
 
           @media (max-width: 768px) {
-            align-items: end;
+            align-items: flex-end;
             flex-direction: column-reverse;
             margin-right: 0px;
             margin-bottom: 16px;
