@@ -126,7 +126,6 @@ export default function Documentation({
         >
           <h1
             css={css`
-              font-size: 3rem;
               margin-top: 5rem;
               margin-bottom: 3rem;
             `}
