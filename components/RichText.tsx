@@ -13,14 +13,28 @@ const getRenderOption = (links) => {
 
         if (item.contentType.indexOf('image') === 0) {
           return (
-            <Image
-              src={item.url}
-              alt={item.title}
-              height={item.height / 2}
-              width={item.width / 2}
-              loader={loader}
-              unoptimized
-            />
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 4rem;
+                margin-bottom: 4rem;
+              `}
+            >
+              <Image
+                css={css`
+                  border-radius: 0.4rem;
+                  border: 1px solid #eaeaea !important;
+                `}
+                src={item.url}
+                alt={item.title}
+                height={item.height / 2}
+                width={item.width / 2}
+                loader={loader}
+                unoptimized
+              />
+            </div>
           )
         }
 
