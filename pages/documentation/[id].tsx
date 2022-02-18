@@ -7,6 +7,7 @@ import MLink from '@mui/material/Link'
 import { Header } from '../../components/Header'
 import RichText from '../../components/RichText'
 import { useSearch } from '../../lib/useSearch'
+import { Menu } from '../../components/Menu'
 
 import {
   getDocument,
@@ -22,6 +23,8 @@ interface LandingProps {
   navigation: any[]
   links: any[]
   searchIndex: any
+  onOpenNav: () => void
+  open: boolean
 }
 
 export default function Documentation({
@@ -31,6 +34,8 @@ export default function Documentation({
   navigation,
   links,
   searchIndex,
+  onOpenNav,
+  open,
 }: LandingProps) {
   const { doSearch } = useSearch(searchIndex, navigation)
 
@@ -40,7 +45,8 @@ export default function Documentation({
 
   return (
     <>
-      <Header id={id} handleSearch={doSearch} />
+      <Menu navigation={navigation} id={id} open={open} onOpenNav={onOpenNav} />
+      <Header onOpenNav={onOpenNav} id={id} handleSearch={doSearch} />
       <div
         css={css`
           display: flex;
@@ -58,6 +64,10 @@ export default function Documentation({
             border-color: #eaeaea;
             padding: 2rem;
             width: 300px;
+
+            @media (max-width: 768px) {
+              display: none;
+            }
           `}
         >
           {navigation.map(({ id, title, isMatch }) => (
