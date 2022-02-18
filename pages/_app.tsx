@@ -1,12 +1,13 @@
+import { useState } from 'react'
 import Head from 'next/head'
-import { indigo } from '@mui/material/colors'
 import { css } from '@emotion/react'
-
 import { Footer } from '../components/Footer'
-
 import '../styles/globals.css'
 
 export default function App({ Component, pageProps }) {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(!open)
+
   return (
     <div
       css={css`
@@ -22,7 +23,7 @@ export default function App({ Component, pageProps }) {
         <meta name="description" content="Dakka - increase test coverage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <Component {...pageProps} onOpenNav={handleOpen} open={open} />
       <Footer />
     </div>
   )

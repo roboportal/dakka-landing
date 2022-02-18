@@ -49,8 +49,9 @@ export const Search = ({ handleSearch }) => {
         display: flex;
         align-items: flex-start;
 
-        @media (max-width: 678px) {
+        @media (max-width: 900px) {
           width: 100%;
+          justify-content: end;
         }
       `}
     >
@@ -66,7 +67,15 @@ export const Search = ({ handleSearch }) => {
           width: 280px;
           border-radius: 2px;
 
+          @media (max-width: 900px) and (min-width: 678px) {
+            margin-top: 24px;
+            margin-right: 20px;
+            margin-left: 20px;
+            width: 45%;
+          }
+
           @media (max-width: 678px) {
+            margin-top: 24px;
             width: 100%;
           }
         `}

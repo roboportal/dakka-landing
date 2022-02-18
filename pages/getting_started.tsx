@@ -5,7 +5,7 @@ import Image from 'next/image'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-
+import { Menu } from '../components/Menu'
 import StepCard from '../components/StepCard'
 
 import stepOne from '../public/1.png'
@@ -24,7 +24,13 @@ import {
 } from '../lib/api'
 import { useSearch } from '../lib/useSearch'
 
-export default function Installed({ id, searchIndex, navigation }) {
+export default function Installed({
+  id,
+  searchIndex,
+  navigation,
+  onOpenNav,
+  open,
+}) {
   const [inputValue, setInputValue] = useState('')
   const [elementText, setElementText] = useState('')
 
@@ -35,7 +41,8 @@ export default function Installed({ id, searchIndex, navigation }) {
 
   return (
     <>
-      <Header id={id} handleSearch={doSearch} />
+      <Menu id={id} open={open} onOpenNav={onOpenNav} />
+      <Header id={id} handleSearch={doSearch} onOpenNav={onOpenNav} />
       <div
         css={css`
           width: 100%;

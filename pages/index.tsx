@@ -10,12 +10,20 @@ import {
 import { Header } from '../components/Header'
 import { useSearch } from '../lib/useSearch'
 import { DescriptionContainer } from '../components/DescriptionContainer'
+import { Menu } from '../components/Menu'
 
-export default function LandingPage({ id, searchIndex, navigation }) {
+export default function LandingPage({
+  id,
+  searchIndex,
+  navigation,
+  onOpenNav,
+  open,
+}) {
   const { doSearch } = useSearch(searchIndex, navigation)
   return (
     <>
-      <Header id={id} handleSearch={doSearch} />
+      <Header id={id} handleSearch={doSearch} onOpenNav={onOpenNav} />
+      <Menu id={id} open={open} onOpenNav={onOpenNav} />
       <div
         css={css`
           padding: 2rem;

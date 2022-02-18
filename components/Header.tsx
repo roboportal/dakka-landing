@@ -2,12 +2,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
+import MenuIcon from '@mui/icons-material/Menu'
+import IconButton from '@mui/material/IconButton'
 import { Search } from '../components/Search'
 import { css } from '@emotion/react'
 import inlineDakkaLogo from '../public/dakka_olol.svg'
 import gitHubIcon from '../public/github.png'
 
-export function Header({ id, handleSearch }) {
+export function Header({ id, handleSearch, onOpenNav }) {
   const { asPath } = useRouter()
 
   const links = useMemo(() => {
@@ -39,14 +41,35 @@ export function Header({ id, handleSearch }) {
 
         @media (max-width: 678px) {
           align-items: start;
-          padding: 24px 16px 16px;
+          padding: 16px;
         }
       `}
     >
+      <IconButton
+        onClick={onOpenNav}
+        css={css`
+          padding: 0;
+          align-self: center;
+
+          @media (min-width: 678px) {
+            display: none;
+          }
+        `}
+      >
+        <MenuIcon />
+      </IconButton>
+
       <Link href="/">
         <a
           css={css`
             flex: 1;
+
+            @media (max-width: 678px) {
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+              padding: 8px;
+            }
           `}
         >
           <Image
@@ -74,6 +97,7 @@ export function Header({ id, handleSearch }) {
             flex-direction: column-reverse;
             margin-right: 0px;
             margin-bottom: 16px;
+            display: none;
           }
         `}
       >
