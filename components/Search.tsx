@@ -67,14 +67,14 @@ export const Search = ({ handleSearch }) => {
           width: 280px;
           border-radius: 2px;
 
-          @media (max-width: 900px) and (min-width: 678px) {
+          @media (max-width: 900px) and (min-width: 768px) {
             margin-top: 16px;
             margin-right: 20px;
             margin-left: 20px;
             width: 45%;
           }
 
-          @media (max-width: 678px) {
+          @media (max-width: 768px) {
             margin-top: 16px;
             width: 100%;
           }

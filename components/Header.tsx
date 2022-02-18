@@ -39,7 +39,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
         justify-content: space-between;
         flex-wrap: wrap;
 
-        @media (max-width: 678px) {
+        @media (max-width: 768px) {
           align-items: start;
           padding: 16px;
         }
@@ -51,7 +51,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
           padding: 0;
           align-self: center;
 
-          @media (min-width: 678px) {
+          @media (min-width: 768px) {
             display: none;
           }
         `}
@@ -64,7 +64,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
           css={css`
             flex: 1;
 
-            @media (max-width: 678px) {
+            @media (max-width: 768px) {
               display: flex;
               flex-direction: column;
               align-items: end;
@@ -92,7 +92,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
           align-items: center;
           margin-right: 20px;
 
-          @media (max-width: 678px) {
+          @media (max-width: 768px) {
             align-items: end;
             flex-direction: column-reverse;
             margin-right: 0px;
@@ -123,7 +123,7 @@ export function Header({ id, handleSearch, onOpenNav }) {
                     color: #046e7a;
                   }
 
-                  @media (max-width: 678px) {
+                  @media (max-width: 768px) {
                     text-decoration: underline;
                   }
                 `}
