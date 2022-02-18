@@ -26,6 +26,7 @@ export function ImageCarousel() {
     <Carousel>
       {images.map((item, i) => (
         <Image
+          placeholder="blur"
           key={i}
           width={969}
           height={395}
