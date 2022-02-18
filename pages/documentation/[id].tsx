@@ -55,7 +55,7 @@ export default function Documentation({
             display: flex;
             flex-direction: column;
             border-right: 1px solid;
-            border-color: #606770;
+            border-color: #eaeaea;
             padding: 2rem;
             width: 300px;
           `}
