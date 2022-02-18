@@ -28,7 +28,7 @@ export function DescriptionContainer() {
           padding: 2rem 4rem;
         }
 
-        @media (max-width: 678px) {
+        @media (max-width: 768px) {
           flex-direction: column;
           padding: 2rem 1.5rem;
         }
@@ -52,7 +52,7 @@ export function DescriptionContainer() {
             font-size: 2rem;
             font-weight: 600;
 
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
               text-align: center;
             }
 
@@ -158,7 +158,7 @@ export function DescriptionContainer() {
                 background: #0c97a8;
               }
 
-              @media (max-width: 600px) {
+              @media (max-width: 768px) {
                 width: 80%;
                 margin-top: 2rem;
                 align-self: center;

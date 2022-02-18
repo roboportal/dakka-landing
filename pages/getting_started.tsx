@@ -88,6 +88,10 @@ export default function Installed({
                 align-self: flex-start;
                 min-width: 300px;
                 width: 64vw;
+
+                @media (max-width: 768px) {
+                  width: 100%;
+                }
               `}
             >
               <h3
@@ -106,6 +110,10 @@ export default function Installed({
                 align-self: flex-end;
                 min-width: 300px;
                 width: 64vw;
+
+                @media (max-width: 768px) {
+                  width: 100%;
+                }
               `}
             >
               <Image alt="step one" src={stepTwo} width={1000} height={366} />
@@ -119,6 +127,10 @@ export default function Installed({
                 align-self: flex-start;
                 min-width: 300px;
                 width: 64vw;
+
+                @media (max-width: 768px) {
+                  width: 100%;
+                }
               `}
             >
               <div
@@ -168,6 +180,10 @@ export default function Installed({
                 align-self: flex-end;
                 min-width: 300px;
                 width: 68vw;
+
+                @media (max-width: 768px) {
+                  width: 100%;
+                }
               `}
             >
               <Image alt="step four" src={stepFour} width={1000} height={508} />
@@ -181,6 +197,10 @@ export default function Installed({
                 align-self: flex-start;
                 min-width: 300px;
                 width: 68vw;
+
+                @media (max-width: 768px) {
+                  width: 100%;
+                }
               `}
             >
               <div
@@ -223,27 +243,48 @@ export default function Installed({
               )}
             </StepCard>
 
-            <StepCard
-              step="6"
-              header="Set assertion block params."
-              wrapperStyles={css`
-                width: 32vw;
-                min-width: 300px;
-              `}
-            >
-              <Image alt="step six" src={stepSix} width={500} height={398} />
-            </StepCard>
+            <div
+              css={css`
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
 
-            <StepCard
-              step="7"
-              header="Export the test."
-              wrapperStyles={css`
-                width: 16vw;
-                min-width: 250px;
+                @media (max-width: 768px) {
+                  flex-direction: column;
+                }
               `}
             >
-              <Image alt="step six" src={stepSeven} />
-            </StepCard>
+              <StepCard
+                step="6"
+                header="Set assertion block params."
+                wrapperStyles={css`
+                  flex: 2;
+
+                  @media (max-width: 768px) {
+                    width: 100%;
+                  }
+                `}
+              >
+                <Image alt="step six" src={stepSix} width={500} height={398} />
+              </StepCard>
+
+              <StepCard
+                step="7"
+                header="Export the test."
+                wrapperStyles={css`
+                  flex: 1;
+                  margin-left: 8rem;
+                  align-self: end;
+
+                  @media (max-width: 768px) {
+                    width: 100%;
+                    margin-top: 2rem;
+                  }
+                `}
+              >
+                <Image alt="step six" src={stepSeven} />
+              </StepCard>
+            </div>
           </div>
         </main>
       </div>
