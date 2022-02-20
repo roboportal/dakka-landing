@@ -84,17 +84,17 @@ export async function getDocumentsIds() {
         sys {
           id
         }
+        level
       }
     }
   }`
 
   const options = getOptions(query)
-
   const result = await fetch(options.endpoint, options).then((r) => r.json())
 
-  const data: string[] = result.data.docPageCollection.items.map(
-    ({ sys: { id } }) => id,
-  )
+  const data: string[] = result.data.docPageCollection.items
+    .sort((a, b) => (a.level !== b.level ? (a.level < b.level ? -1 : 1) : 0))
+    .map(({ sys: { id } }) => id)
 
   return data
 }
