@@ -45,7 +45,13 @@ export default function Documentation({
 
   return (
     <>
-      <Menu navigation={navigation} id={id} open={open} onOpenNav={onOpenNav} />
+      <Menu
+        navigation={navigation}
+        id={id}
+        open={open}
+        onOpenNav={onOpenNav}
+        doSearch={doSearch}
+      />
       <Header onOpenNav={onOpenNav} id={id} handleSearch={doSearch} />
       <div
         css={css`
