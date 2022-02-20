@@ -2,13 +2,18 @@ import SearchIcon from '@mui/icons-material/Search'
 import Box from '@mui/material/Box'
 import { useState, useRef, useMemo } from 'react'
 import Popper from '@mui/material/Popper'
-import { css } from '@emotion/react'
 import Link from 'next/link'
 import Paper from '@mui/material/Paper'
 import InputBase from '@mui/material/InputBase'
 import Divider from '@mui/material/Divider'
+import { css } from '@emotion/react'
 
-export const Search = ({ handleSearch }) => {
+type SearchProps = {
+  handleSearch: (value: string) => any
+  styles?: any
+}
+
+export const Search = ({ handleSearch, styles }: SearchProps) => {
   const [searchPhrase, setSearchPhrase] = useState('')
   const [_isPopperOpen, setIsPopperOpen] = useState(false)
 
@@ -52,6 +57,8 @@ export const Search = ({ handleSearch }) => {
         @media (max-width: 900px) {
           width: 100%;
           justify-content: end;
+          padding: 2rem 2rem 0 1rem;
+          ${styles}
         }
       `}
     >
@@ -104,6 +111,7 @@ export const Search = ({ handleSearch }) => {
           border: 1px solid #eaeaea;
           border-radius: 4px;
           width: 280px;
+          z-index: 9999999;
         `}
         open={isPopperOpen}
         anchorEl={anchorElementRef.current}

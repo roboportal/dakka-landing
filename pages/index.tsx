@@ -23,7 +23,7 @@ export default function LandingPage({
   return (
     <>
       <Header id={id} handleSearch={doSearch} onOpenNav={onOpenNav} />
-      <Menu id={id} open={open} onOpenNav={onOpenNav} />
+      <Menu id={id} open={open} onOpenNav={onOpenNav} doSearch={doSearch} />
       <div
         css={css`
           padding: 2rem;

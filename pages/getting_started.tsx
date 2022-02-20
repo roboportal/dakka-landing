@@ -41,7 +41,7 @@ export default function Installed({
 
   return (
     <>
-      <Menu id={id} open={open} onOpenNav={onOpenNav} />
+      <Menu id={id} open={open} onOpenNav={onOpenNav} doSearch={doSearch} />
       <Header id={id} handleSearch={doSearch} onOpenNav={onOpenNav} />
       <div
         css={css`
@@ -279,6 +279,7 @@ export default function Installed({
                   @media (max-width: 768px) {
                     width: 100%;
                     margin-top: 2rem;
+                    margin-left: 0;
                   }
                 `}
               >

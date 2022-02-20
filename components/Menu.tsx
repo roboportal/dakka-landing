@@ -6,14 +6,23 @@ import Link from 'next/link'
 import Image from 'next/image'
 import gitHubIcon from '../public/github.png'
 import MLink from '@mui/material/Link'
+import { Search } from './Search'
 
 type MenuProps = {
   id: string
   open: boolean
   onOpenNav: () => void
   navigation?: any[]
+  doSearch: (value: string) => void
 }
-export function Menu({ id, open, onOpenNav, navigation = [] }: MenuProps) {
+
+export function Menu({
+  id,
+  open,
+  onOpenNav,
+  navigation = [],
+  doSearch,
+}: MenuProps) {
   const { asPath } = useRouter()
 
   const links = useMemo(() => {
@@ -35,11 +44,13 @@ export function Menu({ id, open, onOpenNav, navigation = [] }: MenuProps) {
 
   return (
     <Drawer anchor="left" open={open} onClose={onOpenNav}>
+      <Search handleSearch={doSearch} />
       <div
         css={css`
           padding: 32px 56px 16px 32px;
           display: flex;
           flex-direction: column;
+          min-width: 280px;
         `}
       >
         {links.map(({ title, link, isMatch }, index) => {

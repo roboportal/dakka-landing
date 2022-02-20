@@ -134,7 +134,12 @@ export function Header({ id, handleSearch, onOpenNav }) {
           )
         })}
       </div>
-      <Search handleSearch={handleSearch} />
+      <Search
+        handleSearch={handleSearch}
+        styles={css`
+          display: none;
+        `}
+      />
     </nav>
   )
 }
