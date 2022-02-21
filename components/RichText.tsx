@@ -8,8 +8,28 @@ import { loader } from '../lib/imageLoader'
 const getRenderOption = (links) => {
   return {
     renderNode: {
+      [BLOCKS.HEADING_6]: (node) => {
+        const content = node.content[0].value
+        return <span>{content}</span>
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const item = links.find((l) => l.sys.id === node.data.target.sys.id)
+
+        if (item.contentType === 'image/svg+xml') {
+          return (
+            <Image
+              css={css`
+                top: 1.8rem !important;
+              `}
+              src={item.url}
+              alt={item.title}
+              height="50px"
+              width={item.width}
+              loader={loader}
+              unoptimized
+            />
+          )
+        }
 
         if (item.contentType.indexOf('image') === 0) {
           return (
