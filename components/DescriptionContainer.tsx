@@ -62,7 +62,7 @@ export function DescriptionContainer() {
             }
           `}
         >
-          Gerenate tests for <span>Cypress</span>, <span>Plawright</span> and
+          Gerenate tests for <span>Cypress</span>, <span>Playwright</span> and
           <span> Puppeteer</span>
         </h2>
         <div
