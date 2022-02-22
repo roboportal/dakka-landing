@@ -5,7 +5,7 @@ import CheckOutlined from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 import { ImageCarousel } from '../components/ImageCarousel'
-import { DAKKA_URL_CHROME } from '../pages/urls'
+import { DAKKA_URL_CHROME } from '../lib/constants'
 
 export function DescriptionContainer() {
   return (

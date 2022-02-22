@@ -11,7 +11,7 @@ import { Header } from '../components/Header'
 import { useSearch } from '../lib/useSearch'
 import { DescriptionContainer } from '../components/DescriptionContainer'
 import { Menu } from '../components/Menu'
-import { DAKKA_URL_CHROME } from './urls'
+import { DAKKA_URL_CHROME } from '../lib/constants'
 
 export default function LandingPage({
   id,
