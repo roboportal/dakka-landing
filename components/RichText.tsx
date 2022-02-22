@@ -64,7 +64,13 @@ const getRenderOption = (links) => {
     renderMark: {
       [MARKS.CODE]: (code) => (
         <pre>
-          <code>{code}</code>
+          <code
+            css={css`
+              white-space: pre-wrap;
+            `}
+          >
+            {code}
+          </code>
         </pre>
       ),
     },
