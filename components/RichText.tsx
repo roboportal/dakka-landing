@@ -1,13 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
 import { css } from '@emotion/react'
 import { loader } from '../lib/imageLoader'
 
 const getRenderOption = (links) => {
   return {
     renderNode: {
+      [INLINES.HYPERLINK]: (node) => {
+        return (
+          <a href={node.data.uri} target="_blank" rel="noreferrer">
+            {node.content[0].value}
+          </a>
+        )
+      },
       [BLOCKS.HEADING_6]: (node) => {
         const content = node.content[0].value
         return <span>{content}</span>

@@ -11,6 +11,7 @@ import { Header } from '../components/Header'
 import { useSearch } from '../lib/useSearch'
 import { DescriptionContainer } from '../components/DescriptionContainer'
 import { Menu } from '../components/Menu'
+import { DAKKA_URL_CHROME } from './urls'
 
 export default function LandingPage({
   id,
@@ -58,24 +59,26 @@ export default function LandingPage({
             margin-top: 2rem;
           `}
         >
-          <Button
-            css={css`
-              color: white;
-              border-color: #0c97a8;
-              color: #0c97a8;
-              border-radius: 2px;
-
-              &:hover {
-                color: #0c97a8;
+          <a href={DAKKA_URL_CHROME} target="_blank" rel="noreferrer">
+            <Button
+              css={css`
+                color: white;
                 border-color: #0c97a8;
-              }
-            `}
-            variant="outlined"
-            size="large"
-            onClick={() => {}}
-          >
-            Install Dakka
-          </Button>
+                color: #0c97a8;
+                border-radius: 2px;
+
+                &:hover {
+                  color: #0c97a8;
+                  border-color: #0c97a8;
+                }
+              `}
+              variant="outlined"
+              size="large"
+              onClick={() => {}}
+            >
+              Install Dakka
+            </Button>
+          </a>
         </div>
       </div>
       <DescriptionContainer />

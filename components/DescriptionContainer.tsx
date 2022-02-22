@@ -5,6 +5,7 @@ import CheckOutlined from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 import { ImageCarousel } from '../components/ImageCarousel'
+import { DAKKA_URL_CHROME } from '../pages/urls'
 
 export function DescriptionContainer() {
   return (
@@ -145,31 +146,33 @@ export function DescriptionContainer() {
             />
             <span>Export or copy to clipboard generated tests.</span>
           </div>
-          <Button
-            disableElevation
-            css={css`
-              border-radius: 0;
-              margin-top: 1rem;
-              align-self: start;
-              background: #191919;
-              border-radius: 2px;
+          <a href={DAKKA_URL_CHROME} target="_blank" rel="noreferrer">
+            <Button
+              disableElevation
+              css={css`
+                border-radius: 0;
+                margin-top: 1rem;
+                align-self: start;
+                background: #191919;
+                border-radius: 2px;
 
-              &:hover {
-                background: #0c97a8;
-              }
+                &:hover {
+                  background: #0c97a8;
+                }
 
-              @media (max-width: 768px) {
-                width: 80%;
-                margin-top: 2rem;
-                align-self: center;
-                margin-bottom: 2rem;
-              }
-            `}
-            variant="contained"
-            onClick={() => {}}
-          >
-            Get Started
-          </Button>
+                @media (max-width: 768px) {
+                  width: 80%;
+                  margin-top: 2rem;
+                  align-self: center;
+                  margin-bottom: 2rem;
+                }
+              `}
+              variant="contained"
+              onClick={() => {}}
+            >
+              Get Started
+            </Button>
+          </a>
         </div>
       </div>
       <div
