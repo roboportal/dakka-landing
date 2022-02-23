@@ -80,11 +80,7 @@ export function Menu({
         })}
 
         <Link href="https://github.com/roboportal/dakka">
-          <a
-            css={css`
-              margin: 1rem 1rem;
-            `}
-          >
+          <a>
             <Image alt="github logo" src={gitHubIcon} width={24} height={24} />
           </a>
         </Link>
