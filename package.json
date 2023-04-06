@@ -21,7 +21,7 @@
     "babel-plugin-emotion": "^11.0.0",
     "contentful": "^9.1.6",
     "lunr": "^2.3.9",
-    "next": "12.0.7",
+    "next": "12.3.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-material-ui-carousel": "^3.2.0",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^15.11.1",
+    "@types/node": "18.15.11",
     "cf-content-types-generator": "^2.0.1",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.7"
