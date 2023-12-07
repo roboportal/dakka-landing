@@ -22,6 +22,7 @@ export default function App({ Component, pageProps }) {
         <title>Dakka</title>
         <meta name="description" content="Dakka - increase test coverage" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.dakka.dev" />
       </Head>
       <Component {...pageProps} onOpenNav={handleOpen} open={open} />
       <Footer />
